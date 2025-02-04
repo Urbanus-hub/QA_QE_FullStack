@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D9E5F3;
+  font-family:'Inter',sans-serif;
+}
+/* .card {
+  position: relative;
+  width: 340px;
+  height: 500px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e7edf5;
+  border-radius: 30px;
+  margin-top:80px;
+  box-shadow:10px 10px 7px rgba(255, 255, 255, 0);
+} */
+.card{
+    margin: 0 auto;
+    margin-top: 60px;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 300px;
+    height: 470px;
+    border-radius: 35px;
+    padding: 20px ;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+    0px 10px 30px rgba(96, 145, 197, 0.8);
+    backdrop-filter: blur(10px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    
+}
+.card::after {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+      circle,
+      rgba(54, 122, 231, 0.3) 0%,
+      rgba(57, 120, 221, 0.1) 30%,
+      rgba(59, 130, 246, 0) 70%
+    );
+    z-index: -10;
+    border-radius: 50%;
+  }
+.card::before {
+    content: '';
+    position: absolute;
+    bottom: -120px;
+    left: -120px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(
+      circle,
+      rgba(0, 162, 255, 0.3) 0%,
+      rgba(57, 120, 221, 0.1) 30%,
+      rgba(59, 130, 246, 0) 70%
+    );
+    z-index: -1;
+    border-radius:50%;
+
+  }
+.google_icon img {
+  width: 60px;
+  height: 60px;
+  margin-top:80px;
+  margin-bottom: -60px;
+  box-sizing: border-box;
+  
+}
+.dot{
+    font-size:7px;
+    text-align: center;
+
+    
+}
+.social-icons {
+  margin-top: -50px;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  
+}
+a {
+  text-decoration: none;
+  margin:10px;
+}
+
+.text h3{
+font-family:'Inter',sans-serif;
+font-size: 30px;
+font-weight: 500;
+}
+.text p{
+    margin-top:-20px;
+    text-align: center;
+    font-size: 16px;
+    color: rgba(22, 22, 22, 0.534);
+    font-weight:600;
+    text-align: center;
+}
+.social-icons a img {
+  width: 20px;
+  height: 20px;
+}
+.addMe {
+  height: 40px;
+  width: 190px;
+  border-radius: 30px;
+  background-color: #ffff;
+  border: none;
+}
+button{
+    font-family: 'Inter',sans-serif;
+    margin-bottom: 40px;
+    font-size: 17px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.685);
+}
