@@ -9,7 +9,7 @@ body {
   background-color: rgb(255, 255, 255);
   border: none;
   width: 230px;
-  height: 350px;
+  height: 330px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,22 +25,28 @@ body {
   margin-top: 10px;
 }
 #text {
-  margin-top: 9px;
+  margin: 10px;
+  height: 50%;
+  width: 100%;
   text-align: center;
 }
-#main #text h6 {
-  font-size:10px;
-  width: 230px;
-  font-weight: bold;
+#main #text h3{
+  font-size:17px;
+  margin: auto;
+  padding:10px;
+  font-weight: 570;
+  text-align: center;
+  margin-top: 10px;
 }
 span {
   font-size: 16.7px;
   width: 230px;
-  font-weight: 600;
+  font-weight: 570;
 }
 #main #text p {
   font-size: 11px;
-  width: 250px;
   color: rgb(146, 149, 151);
-  align-items: center;
+ text-align: center;
+ margin: auto;
+ margin-top: 7px;
 }

@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 100vw;
+  overflow-x: hidden;
+  align-items: center;
+  background-color: #fffcfc;
+  font-family: "Epilogue", serif;
+}
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+nav {
+  display: flex;
+  width: 100%;
+  height: 20vh;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -30px;
+}
+nav .navigations {
+  display: flex;
+  width: 35vw;
+  align-items: center;
+  justify-content: space-between;
+}
+nav .logo {
+  margin-left: 70px;
+}
+.navigations ul {
+  width: 40vw;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.account {
+  display: flex;
+  width: 30vw;
+  height: 100%;
+}
+.account ul {
+  display: flex;
+
+  justify-content: center;
+  list-style-type: none;
+  width: 70%;
+  margin: auto;
+  height: 80%;
+  gap: 15px;
+}
+.account ul li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 37%;
+}
+.account ul li img {
+  width: 20px;
+  height: 20px;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 30px;
+}
+main .account_details {
+  width: 50vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #f6fafd;
+  box-sizing: border-box;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+.track {
+  width: 58%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 18px;
+}
+.account_details img {
+  width: 15px;
+  height: 15px;
+}
+.separator {
+  width: 20px;
+  height: 2px;
+  background-color: grey;
+  border: none;
+  /* margin: 5px 0; */
+}
+
+.order_summary {
+  width: 30vw;
+  background-color: #f6fafd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 40px;
+}
+img[src="./images/headphones.jpg"] {
+  height: 200px;
+  width: 80%;
+}
+.productDesc {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+.productDesc p {
+  margin-right: 20px;
+}
+.plus {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.price {
+  margin-top: -15px;
+}
+.form {
+  height: 30vh;
+  width: 57%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+form {
+  height: 30vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+form input {
+  height: 35px;
+  background-color: #e1e8f0;
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+}
+.form-buttons {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+.reg {
+  width: 150px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+}
+.login {
+  width: 85px;
+  height: 40px;
+  background-color: #3082ce;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+.order-action {
+  margin-top: 50px;
+  width: 78%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.cancel {
+  width: 100px;
+  height: 40px;
+  color: black;
+  border-radius: 5px;
+  border: none;
+  margin-right: 15px;
+  background-color: transparent;
+  box-shadow: 7px 7px 5px #fafbfc50;
+}
+.shipping-details {
+  width: 170px;
+  height: 40px;
+  border: none;
+  border: none;
+  background-color: #3082ce;
+  color: white;
+  margin-left: 10px;
+  border-radius: 7px;
+  box-shadow: 7px 7px 5px #fafbfc50;
+}
+label {
+  margin-bottom: 8px;
+  color: rgba(0, 0, 0, 0.338);
+}
+.code {
+  width: 80%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-bottom: 20px;
+}
+.input img {
+  position: absolute;
+  right: 15px;
+  top: 18px;
+}
+.input input {
+  width: 100%;
+  height: 85%;
+  background-color: #e1e8f0;
+  border: none;
+  border-radius: 3px;
+}
+.code input {
+  width: 60%;
+  height: 85%;
+  background-color: #e1e8f0;
+  border: none;
+  border-radius: 3px;
+}
+.code button {
+  width: 80px;
+  height: 100%;
+  border: 2px solid #7b9cb7;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #3082ce;
+}
+.moreinfo {
+  display: flex;
+  height: 20vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.info {
+  display: flex;
+  width: 80%;
+  height: 10vh;
+
+  align-items: center;
+  justify-content: space-between;
+}
+.prof {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+.prof_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 17px;
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>product page</title>
+    <link rel="stylesheet" href="product.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="./images/mobipt_logo.jpg" alt="" />
+        </div>
+        <div class="navigations">
+          <ul>
+            <li>Home</li>
+            <li>Shop</li>
+            <li>Contact</li>
+            <li>Help</li>
+          </ul>
+        </div>
+        <div class="account">
+          <ul>
+            <li>
+              Account <span><img src="./images/dropdown.svg" alt="" /></span>
+            </li>
+            <li>
+              <span><img src="./images/bag.svg" alt="" /></span>3 items
+            </li>
+          </ul>
+          <div class="prof_image">
+            <img class="prof" src="./images/pesron.jpg" alt="" />
+          </div>
+          
+        </div>
+      </nav>
+      <hr style="width:120vw;height: 1px;background-color:#e1e8f0;border:none;margin-top: -25px;"/>
+      <main>
+        <div class="account_details">
+          <div class="track">
+            <p style="color: #3082CE;">Account</p>
+            <hr class="separator" />
+            <span><img src="./images/check.svg" alt="" /></span>
+            <hr class="separator" />
+            <p>shipping</p>
+            <hr class="separator" />
+            <span><img src="./images/check.svg" alt="" /></span>
+            <hr class="separator" />
+            <p>payment</p>
+          </div>
+         <div class="form">
+            <h3>Account details</h3>
+            <form action="">
+              <label for="email">Email address</label>
+              <div class="input">
+                <input id="email" type="email" placeholder="Email@myemail.com" />
+                <img src="./images/check.svg" alt="">
+              </div>
+              <label for="password" >Password</label>
+              <div class="input">
+                <input type="password" id="password" placeholder="********" />
+                <img src="./images/check.svg" alt="">
+              </div>
+              
+              <div class="form-buttons">
+                <button class="reg">Register for account</button>
+                <button class="login">Log in</button>
+              </div>
+            </form>
+         </div>
+         <hr style="width:60%;margin-top: 160px;background-color: #e1e8f0;">
+          <div class="order-action">
+            <button class="cancel">Cancel order</button>
+            <button class="shipping-details">Shipping details</button>
+          </div>
+        </div>
+        <div class="order_summary">
+          <h3>Order summary</h3>
+          <img src="./images/headphones.jpg" alt="" />
+          <div class="productDesc">
+            <p style="font-weight: bold;">Sony wireless headphones </p>
+           <div class="plus">
+            <span><img src="./images/minus.svg" alt="" style="background-color: #e1e8f0;" /></span>1<span
+            ><img src="./images/plus.svg" alt=""  style="background-color: #e1e8f0;"
+          /></span>
+           </div>
+         
+          </div>
+          
+          <p class="price" style="margin-top: 12px;font-weight: bold;">€320.45</p>
+          <p>Gift card / Discount code</p>
+          <div class="code"><input type="text" /> <button>Apply</button></div>
+          <div class="moreinfo">
+            <div class="info"><span>Sub total</span> <span>€316.55</span></div>
+            <div class="info"><span>Shipping</span> <span style="color: green;">free</span></div>
+            <div class="info"><span style="font-weight: bold;">Total</span> <span>€320.45</span</div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

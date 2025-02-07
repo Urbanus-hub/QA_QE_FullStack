@@ -1,0 +1,17 @@
+{
+  "name": "strings",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev":"node assignment.js",
+    "dev:start":"nodemon assignment.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type":"module"
+}
+
+
