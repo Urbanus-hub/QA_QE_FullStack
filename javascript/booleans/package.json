@@ -1,0 +1,24 @@
+{
+  "name": "booleans",
+  "version": "1.0.0",
+  "main": "assignment.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node assignment.js",
+    "dev:start": "nodemon assignment.js",
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chalk": "^5.4.1",
+    "nodemon": "^3.1.9"
+  },
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^3.4.2"
+  }
+}
