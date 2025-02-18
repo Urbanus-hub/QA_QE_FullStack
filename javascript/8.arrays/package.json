@@ -1,0 +1,15 @@
+{
+  "name": "8.arrays",
+  "version": "1.0.0",
+  "main": "arrayAssignment.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"node arrayAssignment.js",
+    "dev:start":"nodemon arrayAssignment.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type":"module"
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        .calculator {
+            width: 280px;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 6px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 4px;
+            gap: 8px;
+            height: 24px;
+        }
+
+        .menu-icon {
+            width: 16px;
+            height: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2px;
+            cursor: pointer;
+        }
+
+        .menu-icon span {
+            height: 1.5px;
+            background: #666;
+            width: 100%;
+        }
+
+        .title {
+            font-size: 12px;
+            color: #333;
+        }
+
+        .display {
+            text-align: right;
+            padding: 10px;
+            font-size: 32px;
+            font-weight: 500;
+            height: 60px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+
+        .history {
+            text-align: right;
+            padding: 10px;
+            font-size: 16px;
+            color: #666;
+            height: 30px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .history-item {
+            margin-left: 5px;
+        }
+
+        .memory-row {
+            display: flex;
+            gap: 1px;
+            margin-bottom: 4px;
+        }
+
+        .memory-button {
+            flex: 1;
+            text-align: center;
+            padding: 6px;
+            color: #666;
+            font-size: 11px;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+        }
+
+        .button {
+            aspect-ratio: 1;
+            border: none;
+            background: #f9f9f9;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .button:hover {
+            background: #f0f0f0;
+        }
+
+        .equals {
+            background: #0067c0;
+            color: white;
+        }
+
+        .equals:hover {
+            background: #005aa6;
+        }
+
+        .function-button {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator" id="calculator">
+        <div class="header" id="calc-header">
+            <div class="menu-icon" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="title" id="calc-title">Standard</div>
+        </div>
+        <div class="history" id="history">
+            00.00
+          </div>
+        <div class="display" id="display">00.00</div>
+     
+       
+
+        <div class="memory-row" id="memory-buttons">
+            <div class="memory-button" id="mc">MC</div>
+            <div class="memory-button" id="mr">MR</div>
+            <div class="memory-button" id="m-plus">M+</div>
+            <div class="memory-button" id="m-minus">M-</div>
+            <div class="memory-button" id="ms">MS</div>
+            <div class="memory-button" id="m-dropdown">M▾</div>
+        </div>
+
+        <div class="button-grid" id="button-grid">
+            <button class="button function-button  btn-operator" id="percent">%</button>
+            <button class="button function-button" id="ce">CE</button>
+            <button class="button function-button clear" id="clear">C</button>
+            <button class="button function-button" id="backspace">⌫</button>
+
+            <button class="button function-button" id="reciprocal">¹/x</button>
+            <button class="button function-button" id="square">x²</button>
+            <button class="button function-button" id="sqrt">²√x</button>
+            <button class="button function-button btn-operator" id="divide">÷</button>
+
+            <button class="button nums" id="num-7">7</button>
+            <button class="button nums" id="num-8">8</button>
+            <button class="button nums" id="num-9">9</button>
+            <button class="button btn-operator" id="multiply">×</button>
+
+            <button class="button nums" id="num-4" >4</button>
+            <button class="button nums" id="num-5" >5</button>
+            <button class="button nums" id="num-6" >6</button>
+            <button class="button btn->−</button>
+
+            <button class="button nums" id="num-1">1</button>
+            <button class="button nums" id="num-2">2</button>
+            <button class="button nums" id="num-3">3</button>
+            <button class="button btn-operator" id="add">+</button>
+
+            <button class="button" id="negate">+/-</button>
+            <button class="button nums" id="num-0">0</button>
+            <button class="button nums" id="decimal" >.</button>
+            <button class="button equals" id="equals">=</button>
+        </div>
+    </div>
+    <script src="./calc.js"></script>
+</body>
+</html>
