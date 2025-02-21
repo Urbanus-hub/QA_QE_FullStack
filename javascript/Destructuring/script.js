@@ -47,6 +47,7 @@ const billingAddress = document.getElementById('billing-address');
 const transactions = document.getElementById('transactions');
 
 
+
 const firstname = document.createElement('h2');
 firstname.textContent = `Name: ${firstName} ${lastName}`
 personalInfo.appendChild(firstname)
