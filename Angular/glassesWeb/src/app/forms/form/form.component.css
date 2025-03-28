@@ -1,0 +1,120 @@
+.application-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .form-group {
+    flex: 1;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+
+  .error-input {
+    border-color: #dc3545;
+  }
+
+  .error-message {
+    color: #dc3545;
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+
+  .skills-section {
+    margin-bottom: 15px;
+  }
+
+  .skill-input-group {
+    display: flex;
+    margin-bottom: 10px;
+    gap: 10px;
+  }
+
+  .skill-input-group input {
+    flex-grow: 1;
+  }
+
+  .remove-skill-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .remove-skill-btn:hover {
+    background-color: #c82333;
+  }
+
+  .add-skill-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .add-skill-btn:hover {
+    background-color: #218838;
+  }
+
+  .submit-section {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  button[type="submit"] {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+  button[type="submit"]:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }

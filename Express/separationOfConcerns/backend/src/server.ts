@@ -1,23 +1,30 @@
+import { setupAliases } from 'import-aliases'
+setupAliases()
+
 import express, { Request, Response } from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
-import pool from './db/db.config'
-import path from 'path'
-import booksRouter from './routes/routes'
+import booksRouter from '@app/routes/routes'
+import authroutes from '@app/routes/authroutes'
 
 dotenv.config();
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:3001'],
+  methods:"DELETE ,GET,POST,PUT",
+  credentials:  true
+}))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-const _dirname = path.resolve()
+
 
 const port = process.env.PORT;
 
 app.use('/api', booksRouter);
+app.use('/api',authroutes);
 
 
 

@@ -3,127 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Explorer</title>
+    <title>Book Explorer Library</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="cart-wrapper">
-                <div class="cart-cont" id="cart-button">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <span class="cart-count">0</span>
-                </div>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1 class="logo">
+                   
+                    <span> <i class="fa-thin fa-graduation-cap fa-bounce" style="width: 40px;height: 40px;" aria-hidden="true"></i>Liberty</span><span>Library</span>
+                </h1>
             </div>
-            <h1>📚 Book Explorer</h1>
-            <p class="subtitle">Discover your next favorite read</p>
-            <button id="add-book-btn" class="add-book-btn">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-                Add New Book
-            </button>
-        </header>
-
-        <!-- Search and Filter Controls -->
-        <section class="controls">
-            <div class="search-bar">
-                <input type="text" placeholder="Search books...">
-                <span class="search-icon">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </span>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-th-large" aria-hidden="true"></i>
+                            <span>Browse Collection</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <span>Featured Books</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-history" aria-hidden="true"></i>
+                            <span>Reading History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span>My Account</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-action">
+                <button id="add-book-btn" class="add-book-btn">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <span>Add New Book</span>
+                </button>
             </div>
-            <div class="filters">
-                <select id="genre-filter">
-                    <option value="">All Genres</option>
-                    <option value="Fiction">Fiction</option>
-                    <option value="Dystopian">Dystopian</option>
-                    <option value="Romance">Romance</option>
-                    <option value="Fantasy">Fantasy</option>
-                    <option value="Adventure">Adventure</option>
-                    <option value="Historical Fiction">Historical Fiction</option>
-                    <option value="Epic Poetry">Epic Poetry</option>
-                </select>
-                <select id="year-filter">
-                    <option value="">All Years</option>
-                    <option value="pre-1900">Before 1900</option>
-                    <option value="1900-1950">1900-1950</option>
-                    <option value="post-1950">After 1950</option>
-                </select>
-                <select id="sort-by">
-                    <option value="title-asc">Title (A-Z)</option>
-                    <option value="title-desc">Title (Z-A)</option>
-                    <option value="year-asc">Year (Oldest)</option>
-                    <option value="year-desc">Year (Newest)</option>
-                    <option value="pages-asc">Pages (Fewest)</option>
-                    <option value="pages-desc">Pages (Most)</option>
-                </select>
-                <button id="apply-filters">Apply Filters</button>
+            
+            <div class="sidebar-footer">
+                <p>© 2025 Liberty Library</p>
+                <p>Explore, Discover, Learn</p>
             </div>
-        </section>
+        </aside>
 
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-value" id="total-books">10</div>
-                    <div class="stat-label">Total Books</div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-title">
+                    <h2>Book Explorer</h2>
+                    <p class="subtitle">Discover your next favorite read</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="avg-pages">426</div>
-                    <div class="stat-label">Average Pages</div>
+                
+                <div class="header-actions">
+                   
+                    
+                    <div class="cart-wrapper">
+                        <div class="cart-cont" id="cart-button">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <span class="cart-count">0</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="oldest-book">800 BCE</div>
-                    <div class="stat-label">Oldest Book</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value" id="genres-count">7</div>
-                    <div class="stat-label">Unique Genres</div>
-                </div>
-            </div>
-        </section>
+            </header>
 
-        <!-- Loading State -->
-        <div class="loading-container" id="loading-container" style="display: none;">
-            <div class="loader"></div>
-        </div>
-
-        <!-- Books Grid -->
-        <div class="book-grid" id="books-container">
-            <!-- Example Book Card 1 -->
-            <div class="book-card">
-                <div class="book-image">
-                    <img src="" alt="" class="image"/>
-                    <div class="book-category">Dystopian</div>
-                    <div class="book-actions">
-                        <button class="action-btn edit-btn" data-id="1">
-                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                        </button>
-                        <button class="action-btn delete-btn" data-id="1">
-                            <i class="fa fa-trash" aria-hidden="true"></i>
+            <!-- Filter Controls -->
+            <section class="filter-section">
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label for="genre-filter">Genre</label>
+                        <select id="genre-filter">
+                            <option value="">All Genres</option>
+                            <option value="Fiction">Fiction</option>
+                            <option value="Dystopian">Dystopian</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Historical Fiction">Historical Fiction</option>
+                            <option value="Epic Poetry">Epic Poetry</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="year-filter">Publication</label>
+                        <select id="year-filter">
+                            <option value="">All Years</option>
+                            <option value="pre-1900">Before 1900</option>
+                            <option value="1900-1950">1900-1950</option>
+                            <option value="post-1950">After 1950</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="sort-by">Sort By</label>
+                        <select id="sort-by">
+                            <option value="title-asc">Title (A-Z)</option>
+                            <option value="title-desc">Title (Z-A)</option>
+                            <option value="year-asc">Year (Oldest)</option>
+                            <option value="year-desc">Year (Newest)</option>
+                            <option value="pages-asc">Pages (Fewest)</option>
+                            <option value="pages-desc">Pages (Most)</option>
+                        </select>
+                    </div>
+                    
+                    <button id="apply-filters" class="filter-btn">Apply Filters</button>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search books...">
+                        <button class="search-btn">
+                            <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
                     </div>
                 </div>
-                <div class="book-info">
-                    <h3 class="book-title"></h3>
-                    <p class="book-author">George Orwell</p>
-                    <div class="book-meta">
-                        <span id="year">1949</span>
-                        <span id="pages">328 pages</span>
-                    </div>
-                    <p class="book-description">A dystopian novel set in a totalitarian society ruled by the Party.</p>
-                    <p class="book-publisher">Secker & Warburg</p>
-                </div>
-            </div>
-        </div>
+            </section>
 
-        <footer>
-            <p>Book Explorer — Async JavaScript Project</p>
-        </footer>
-        <script src="./src/script.ts"></script>
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="total-books">10</div>
+                            <div class="stat-label">Total Books</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa fa-file-text" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="avg-pages">426</div>
+                            <div class="stat-label">Average Pages</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="oldest-book">800 BCE</div>
+                            <div class="stat-label">Oldest Book</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fa fa-tags" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="genres-count">7</div>
+                            <div class="stat-label">Unique Genres</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <div class="loading-container" id="loading-container" style="display: none;">
+                <div class="loader"></div>
+            </div>
+
+            <!-- Books Grid -->
+            <section class="books-section">
+                <h2 class="section-title">Collection</h2>
+                <div class="book-grid" id="books-container">
+                    <!-- Example Book Card 1 -->
+                    <div class="book-card">
+                        <div class="book-image">
+                            <img src="https://m.media-amazon.com/images/I/71kxa1-0zfL.jpg" alt="1984 Book Cover" class="image"/>
+                            <div class="book-category">Dystopian</div>
+                            <div class="book-actions">
+                                <button class="action-btn edit-btn" data-id="1">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                                <button class="action-btn delete-btn" data-id="1">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">1984</h3>
+                            <p class="book-author">George Orwell</p>
+                            <div class="book-meta">
+                                <span class="year">1949</span>
+                                <span class="pages">328 pages</span>
+                            </div>
+                            <p class="book-description">A dystopian novel set in a totalitarian society ruled by the Party.</p>
+                            <p class="book-publisher">Secker & Warburg</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Example Book Card 2 -->
+                    <div class="book-card">
+
+                        <div class="book-image">
+                            <img src="/api/placeholder/400/320" alt="Pride and Prejudice Book Cover" class="image"/>
+                            <div class="book-category">Romance</div>
+                            <div class="book-actions">
+                                <button class="action-btn edit-btn" data-id="2">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                                </button>
+                                <button class="action-btn delete-btn" data-id="2">
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h3 class="book-title">Pride and Prejudice</h3>
+                            <p class="book-author">Jane Austen</p>
+                            <div class="book-meta">
+                                <span class="year">1813</span>
+                                <span class="pages">432 pages</span>
+                            </div>
+                            <p class="book-description">A romantic novel following the character development of Elizabeth Bennet.</p>
+                            <p class="book-publisher">T. Egerton, Whitehall</p>
+                          
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="main-footer">
+                <p>Book Explorer Library — Async JavaScript Project</p>
+            </footer>
+        </main>
     </div>
 
     <!-- Shopping Cart Overlay -->
@@ -216,7 +344,7 @@
                     </div>
                 </div>
                 
-                <div class="form-group">
+                <div class="form-group" style="font-size:18px;">
                     <label for="edit-genre">Genre</label>
                     <select id="edit-genre" name="genre" required>
                         <option value="Fiction">Fiction</option>
@@ -225,7 +353,7 @@
                         <option value="Fantasy">Fantasy</option>
                         <option value="Adventure">Adventure</option>
                         <option value="Historical Fiction">Historical Fiction</option>
-                        <option value="Epic Poetry">Epic Poetry</option>
+                        <option value="Epic Poetry" style="color: orangered;">Epic Poetry</option>
                     </select>
                 </div>
                 
@@ -341,5 +469,7 @@
             </div>
         </div>
     </div>
+
+    <script src="./src/script.ts"></script>
 </body>
 </html>

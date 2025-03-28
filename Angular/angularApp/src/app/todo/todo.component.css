@@ -1,0 +1,103 @@
+/* Alternative Todo List Styling */
+.todo-container {
+    max-width: 550px;
+    margin: 30px auto;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  }
+  
+  .todo-container h2 {
+    color: #2c3e50;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  
+  .input-container {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 8px;
+  }
+  
+  .input-container input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 15px;
+    background: white;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  
+  .input-container input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  }
+  
+  .input-container button {
+    padding: 0 16px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.2s;
+  }
+  
+  .input-container button:hover {
+    background: #2980b9;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e8e8e8;
+  }
+  
+  li:last-child {
+    margin-bottom: 0;
+  }
+  
+  li span {
+    color: #34495e;
+    font-size: 15px;
+  }
+  
+  .delete-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #e74c3c;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  
+  .delete-btn:hover {
+    opacity: 1;
+  }
+  
+  @media (max-width: 600px) {
+    .todo-container {
+      width: 95%;
+      margin: 15px auto;
+      padding: 16px;
+    }
+  }

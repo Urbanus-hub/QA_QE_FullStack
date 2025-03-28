@@ -37,17 +37,20 @@ document.addEventListener("DOMContentLoaded", function (){
   }
   
   interface Book { 
-    id: string;
+    book_id: string;
     title: string;
     author: string;
-    description: string;
     genre: string;
-    year: string;
-    pages: string;
-    price: number;
-    image: string;
+    year: number;  // Changed from string to number
+    pages: number; // Changed from string to number
     publisher: string;
-  }
+    description: string;
+    total_copies: number; // Added
+    available_copies: number; // Added
+    image: string;
+    price: number;
+}
+
 
   interface CartItem extends Book {
     quantity: number;
@@ -155,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function (){
       
       const editBtn = document.createElement("button");
       editBtn.className = "action-btn edit-btn";
-      editBtn.setAttribute("data-id", result.id);
+      editBtn.setAttribute("data-id", result.book_id);
       editBtn.innerHTML = '<i class="fa fa-pencil" aria-hidden="true"></i>';
       editBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -164,11 +167,13 @@ document.addEventListener("DOMContentLoaded", function (){
       
       const deleteBtn = document.createElement("button");
       deleteBtn.className = "action-btn delete-btn";
-      deleteBtn.setAttribute("data-id", result.id);
+      deleteBtn.setAttribute("data-id", result.book_id);
+
       deleteBtn.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
       deleteBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        openDeleteModal(result.id);
+        console.log(result.book_id);
+        openDeleteModal(result.book_id);
       });
       
       bookActions.appendChild(editBtn);
@@ -194,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function (){
       
       const year = document.createElement("span");
       year.id = "year";
-      year.textContent = result.year;
+      year.textContent = result.year.toString();
       
       const pages = document.createElement("span");
       pages.id = "pages";
@@ -220,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function (){
     
       const bookId = document.createElement("p");
       bookId.className = 'id-book';
-      bookId.textContent = result.id;
+      bookId.textContent = result.book_id;
       bookId.style.display = 'none';
     
       const buyBook = document.createElement("button");
@@ -267,32 +272,32 @@ document.addEventListener("DOMContentLoaded", function (){
   }) {
     const totalBooksElement = document.getElementById("total-books");
     if (totalBooksElement) {
-      totalBooksElement.textContent = stats.totalBooks.toString();
+      // totalBooksElement.textContent = stats.totalBooks.toString();
     }
     
     const avgPagesElement = document.getElementById("avg-pages");
     if (avgPagesElement) {
-      avgPagesElement.textContent = stats.avgPages.toString();
+      // avgPagesElement.textContent = stats.avgPages.toString();
     }
     
     const oldestBookElement = document.getElementById("oldest-book");
     if (oldestBookElement && stats.oldestBook !== null) {
-      oldestBookElement.textContent = 
-        stats.oldestBook < 0 ? `${Math.abs(stats.oldestBook)} BCE` : stats.oldestBook.toString();
+      // oldestBookElement.textContent = 
+      //   stats.oldestBook < 0 ? `${Math.abs(stats.oldestBook)} BCE` : stats.oldestBook.toString();
     }
     
     const genresCountElement = document.getElementById("genres-count");
     if (genresCountElement) {
-      genresCountElement.textContent = stats.uniqueGenres.toString();
+      // genresCountElement.textContent = stats.uniqueGenres.toString();
     }
   }
   
   function addToCart(bookId: string, booksArray: Book[]) {
-    const bookToAdd = booksArray.find((book: Book) => book.id === bookId);
+    const bookToAdd = booksArray.find((book: Book) => book.book_id === bookId);
     
     if (!bookToAdd) return;
     
-    const existingItemIndex = cartItems.findIndex(item => item.id === bookId);
+    const existingItemIndex = cartItems.findIndex(item => item.book_id === bookId);
     
     if (existingItemIndex !== -1) {
       cartItems[existingItemIndex].quantity += 1;
@@ -359,16 +364,16 @@ document.addEventListener("DOMContentLoaded", function (){
           <p class="cart-item-price">$${item.price.toFixed(2)} each</p>
           <div class="cart-item-controls">
             <div class="quantity-controls">
-              <button class="quantity-btn decrease-quantity" data-id="${item.id}">
+              <button class="quantity-btn decrease-quantity" data-id="${item.book_id}">
                 <i class="fa fa-minus" aria-hidden="true"></i>
               </button>
               <span class="quantity">${item.quantity}</span>
-              <button class="quantity-btn btn2 increase-quantity" data-id="${item.id}">
+              <button class="quantity-btn btn2 increase-quantity" data-id="${item.book_id}">
                 <i class="fa fa-plus" aria-hidden="true"></i>
               </button>
             </div>
             <span class="item-total">$${(item.price * item.quantity).toFixed(2)}</span>
-            <button class="remove-item" data-id="${item.id}">
+            <button class="remove-item" data-id="${item.book_id}">
               <i class="fa fa-trash" aria-hidden="true"></i>
               Remove
             </button>
@@ -414,7 +419,7 @@ document.addEventListener("DOMContentLoaded", function (){
   }
   
   function incrementCartItem(id: string) {
-    const itemIndex = cartItems.findIndex(item => item.id === id);
+    const itemIndex = cartItems.findIndex(item => item.book_id === id);
     if (itemIndex !== -1) {
       cartItems[itemIndex].quantity += 1;
       updateCartUI();
@@ -422,7 +427,7 @@ document.addEventListener("DOMContentLoaded", function (){
   }
   
   function decrementCartItem(id: string) {
-    const itemIndex = cartItems.findIndex(item => item.id === id);
+    const itemIndex = cartItems.findIndex(item => item.book_id=== id);
     if (itemIndex !== -1) {
       if (cartItems[itemIndex].quantity > 1) {
         cartItems[itemIndex].quantity -= 1;
@@ -435,7 +440,7 @@ document.addEventListener("DOMContentLoaded", function (){
   }
   
   function removeCartItem(id: string) {
-    cartItems = cartItems.filter(item => item.id !== id);
+    cartItems = cartItems.filter(item => item.book_id!== id);
     updateCartUI();
     showNotification("Item removed from cart");
   }
@@ -487,7 +492,7 @@ document.addEventListener("DOMContentLoaded", function (){
         <p><strong>Genre:</strong> ${result.genre}</p>
         <p><strong>Year:</strong> ${result.year}</p>
         <p><strong>Pages:</strong> ${result.pages}</p>
-        <p><strong>Price:</strong> $${result.price.toFixed(2)}</p>
+        <p><strong>Price:</strong> $${Number(result.price).toFixed(2)}</p>
         <p><strong>Description:</strong> ${result.description}</p>
         <p><strong>Publisher:</strong> ${result.publisher}</p>
         <img src="${result.image}" alt="${result.title}">
@@ -596,11 +601,11 @@ document.addEventListener("DOMContentLoaded", function (){
       const editPublisher = document.getElementById('edit-publisher') as HTMLInputElement;
       const editImage = document.getElementById('edit-image') as HTMLInputElement;
       
-      if (editBookId) editBookId.value = book.id;
+      if (editBookId) editBookId.value = book.book_id;
       if (editTitle) editTitle.value = book.title;
       if (editAuthor) editAuthor.value = book.author;
-      if (editYear) editYear.value = book.year;
-      if (editPages) editPages.value = book.pages;
+      if (editYear) editYear.value = book.year.toString();
+      if (editPages) editPages.value = book.pages.toString();
       if (editGenre) editGenre.value = book.genre;
       if (editDescription) editDescription.value = book.description;
       if (editPublisher) editPublisher.value = book.publisher;
@@ -777,7 +782,7 @@ document.addEventListener("DOMContentLoaded", function (){
         }
         
         // Remove from cart if present
-        cartItems = cartItems.filter(item => item.id !== currentBookIdToDelete);
+        cartItems = cartItems.filter(item => item.book_id !== currentBookIdToDelete);
         updateCartUI();
         
         // Refresh book list

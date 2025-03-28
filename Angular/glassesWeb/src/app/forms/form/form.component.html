@@ -1,0 +1,78 @@
+<div class="application-container">
+    <form [formGroup]="jobApplicationForm" (ngSubmit)="onSubmit()">
+      <h1>Job Application Form</h1>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input 
+            id="firstName"
+            formControlName="firstName" 
+            type="text"
+            [class.error-input]="firstName.touched && firstName.errors?.['nameExists']"
+          >
+          <div 
+            *ngIf="firstName.touched && firstName.errors?.['nameExists']" 
+            class="error-message"
+          >
+            This name already exists in our database.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input 
+            id="lastName"
+            formControlName="lastName" 
+            type="text"
+            [class.error-input]="lastName.touched && lastName.errors?.['nameExists']"
+          >
+          <div 
+            *ngIf="lastName.touched && lastName.errors?.['nameExists']" 
+            class="error-message"
+          >
+            This name already exists in our database.
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-section">
+        <label>Skills:</label>
+        <div formArrayName="skills">
+          <div 
+            *ngFor="let skill of skills.controls; let i = index" 
+            class="skill-input-group"
+          >
+            <input 
+              [formControlName]="i" 
+              type="text" 
+              placeholder="Enter skill"
+            >
+            <button 
+              type="button" 
+              class="remove-skill-btn"
+              (click)="removeSkill(i)"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+        <button 
+          type="button" 
+          class="add-skill-btn"
+          (click)="addSkill()"
+        >
+          Add Skill
+        </button>
+      </div>
+
+      <div class="submit-section">
+        <button 
+          type="submit" 
+          [disabled]="jobApplicationForm.invalid"
+        >
+          Submit Application
+        </button>
+      </div>
+    </form>
+  </div>
